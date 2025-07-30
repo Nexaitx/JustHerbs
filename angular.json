@@ -34,6 +34,9 @@
               "src/styles.scss",
               "src/styles/custom-bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
