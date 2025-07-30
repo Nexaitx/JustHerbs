@@ -1,0 +1,25 @@
+$primary: #CDBDB7;
+$secondary: #F1F1F1;
+$tertiary: #EC9C7F;
+$quaternary: #fbf7f4;
+$quinary: #FAF6F3;
+$info: #7A5797;
+$success: #F8F8F8;
+$heading: #E8B19D;
+$button: #404040;
+$footer-bg: #CFBDB9;
+$body-bg: #fff;
+
+// Add all custom colors to the theme colors map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "quaternary": $quaternary,
+  "quinary": $quinary,
+  "info": $info,
+  "heading": $heading,
+  "footer": $footer-bg
+);
+
+@import "bootstrap/scss/bootstrap";

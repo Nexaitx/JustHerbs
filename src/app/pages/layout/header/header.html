@@ -1,0 +1,88 @@
+<div class="bg-secondary text-center py-1">
+    <p class="mb-0">Flat 25% off on all products</p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light py-3 bg-light">
+    <div class="container">
+        <img src="../../../../assets/logo.png" alt="Logo">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active" #rlaHome="routerLinkActive"
+                        [class.active]="rlaHome.isActive">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about" routerLinkActive="active" #rlaAbout="routerLinkActive"
+                        [class.active]="rlaAbout.isActive">
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/category" routerLinkActive="active" #rlaCategory="routerLinkActive"
+                        [class.active]="rlaCategory.isActive">
+                        Category
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/blogs" routerLinkActive="active" #rlaBlogs="routerLinkActive"
+                        [class.active]="rlaBlogs.isActive">
+                        Blogs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact" routerLinkActive="active" #rlaContact="routerLinkActive"
+                        [class.active]="rlaContact.isActive">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Login/Sign Up Buttons or Profile Menu -->
+            <div class="navbar-nav ms-auto align-items-center">
+                <span class="bi bi-search"></span>
+                <span class="bi bi-person mx-2"></span>
+                <span class="bi bi-cart"></span>
+                
+                <!-- Show Login/Sign Up when not logged in -->
+                @if(!isLoggedIn) {
+                <a class="nav-link" routerLink="/login">
+                    <i class="bi bi-person"></i> Login
+                </a>
+                <a class="btn btn-primary ms-2" routerLink="/signup">
+                    Sign Up
+                </a>
+                }
+
+                <!-- Show Profile Menu when logged in -->
+                @if(isLoggedIn){
+                <button mat-icon-button [matMenuTriggerFor]="profileMenu" class="profile-btn">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+                <mat-menu #profileMenu="matMenu">
+                    <button mat-menu-item routerLink="/account">
+                        <mat-icon>account_balance_wallet</mat-icon>
+                        <span>Account</span>
+                    </button>
+                    <button mat-menu-item routerLink="/profile">
+                        <mat-icon>person</mat-icon>
+                        <span>Profile</span>
+                    </button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item (click)="logout()">
+                        <mat-icon>logout</mat-icon>
+                        <span>Logout</span>
+                    </button>
+                </mat-menu>
+                }
+            </div>
+        </div>
+    </div>
+</nav>
